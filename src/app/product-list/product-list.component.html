@@ -1,0 +1,27 @@
+<button class="btn btn-primary" (click)="openModal()" ><span class="glyphicon glyphicon-plus"></span> new</button>
+
+            <div class="container">
+              <div class="row">
+            <table id="myTable" class="table table-bordered table-striped">
+              <thead>
+                <th>ID</th>
+                <th>CODE</th>
+                <th>LIBELLE</th>
+                <th>PRIX</th>
+                <th>action</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pr of products">
+                      <td>{{pr.id}}</td>
+                      <td>{{pr.code}}</td>
+                      <td>{{pr.libelle}}</td>
+                      <td>{{pr.prix}}</td>
+                      <td>
+                        <button class='btn btn-success btn-sm'  (click)="openModalEdit(pr.id)"><span class='glyphicon glyphicon-edit'></span> Edit</button>
+                        <button class='btn btn-danger btn-sm' (click)="deleteProduct(pr.id)"><span class='glyphicon glyphicon-trash' ></span> Delete</button>
+                      </td>
+                    </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
